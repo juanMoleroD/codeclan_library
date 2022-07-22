@@ -4,33 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>{{ title }} Book details</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+
     <h1>All Books:</h1>
     <table>
         <thead>
             <th>Title</th>
             <th>Author</th>
             <th>Genre</th>
-            <th>Show</th>
         </thead>
         <tbody>
-
-            {% for book in books %}
             <tr>
                 <td>{{ book.title }}</td>
                 <td>{{ book.author}}</td>
                 <td>{{ book.genre }}</td>
-                <td><a href="/books/{{ loop.index0 }}">details</a></td> <!-- or books.index(book)  -->
             </tr>
-            {% endfor %}
         </tbody>
     </table>
+    <a href="/books">Back</a>
 
-
-    
-    
 </body>
 </html>
