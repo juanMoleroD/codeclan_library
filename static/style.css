@@ -35,3 +35,7 @@ form {
     width: 30%;
     margin: auto;
 }
+
+.available-cell {
+    text-align: center;
+}

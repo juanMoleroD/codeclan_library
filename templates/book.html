@@ -15,15 +15,41 @@
             <th>Title</th>
             <th>Author</th>
             <th>Genre</th>
+            <th>Available</th>
+            {% if book.checked_out %}
+            <th>Return By</th>
+            <th>Check In</th>
+            {% else %}
+            <th>Return Date</th>
+            {% endif %}
+            
         </thead>
         <tbody>
             <tr>
                 <td>{{ book.title }}</td>
                 <td>{{ book.author}}</td>
                 <td>{{ book.genre }}</td>
+
+                {% if book.checked_out %}
+                <td class="available-cell">Checked out &#10060;</td>
+                {% else %}
+                <td class="available-cell">Available &#9989;</td>
+                {% endif %}
+                
+                {% if book.checked_out %}
+                <td>{{ book.return_by}}</td>
+                <td><a href="/books/check-in/{{ book_index }}">Check In</a></td>
+                {% else %}
+                <td><form action="/books/check-out" method="POST">
+                    <input type="date" name="return-by" required>
+                    <input name="book-index" value="{{ book_index }}" hidden>
+                    <input type="submit" value="Check Out">
+                </form></td>
+                {% endif %}
             </tr>
         </tbody>
     </table>
+    <br>
     <a href="/books">Back</a>
 
 </body>
