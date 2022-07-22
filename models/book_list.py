@@ -16,6 +16,11 @@ def add_book(new_book):
 def remove_book_by_index(index):
     books.pop(index)
 
+def remove_book_by_title(title):
+    for book in books:
+        if book.title == title:
+            books.remove(book)
+
 def checkout_book(book_index, return_by_date):
     if books[book_index].checked_out == False:
         books[book_index].return_by = return_by_date

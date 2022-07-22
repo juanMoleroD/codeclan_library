@@ -19,12 +19,12 @@ th, tr , td {
     justify-content: flex-start;
 }
 
-form {
+#new-books-form {
     width: 300px;
     margin: 0;
 }
 
-#form-items {
+.form-items {
     display: flex;
     flex-direction: column;
     padding: 16px;
