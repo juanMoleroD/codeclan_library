@@ -15,6 +15,7 @@
             <th>Author</th>
             <th>Genre</th>
             <th>Show</th>
+            <th>Delete</th>
         </thead>
         <tbody>
 
@@ -23,7 +24,8 @@
                 <td>{{ book.title }}</td>
                 <td>{{ book.author}}</td>
                 <td>{{ book.genre }}</td>
-                <td><a href="/books/{{ loop.index0 }}">Details</a></td> <!-- or books.index(book)  -->
+                <td><a href="/books/{{ loop.index0 }}">Show</a></td> <!-- or books.index(book)  -->
+                <td><a href="/books/delete/{{ loop.index0 }}">Delete</a></td>
             </tr>
             {% endfor %}
         </tbody>

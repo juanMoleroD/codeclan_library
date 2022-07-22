@@ -8,3 +8,7 @@ books = [book1, book2, book3]
 
 def add_book(new_book):
     books.append(new_book)
+
+def remove_book_by_index(index):
+    books.pop(index)
+

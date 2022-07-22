@@ -1,7 +1,8 @@
+from crypt import methods
 from flask import render_template, redirect, request
 from app import app
 from models.book import Book
-from models.book_list import books, add_book
+from models.book_list import books, add_book, remove_book_by_index
 
 @app.route('/books')
 def index():
@@ -20,4 +21,9 @@ def add_new_book():
     print(request.form)
     new_book = Book(request.form['book-title'], request.form['author'], request.form['genre'])
     add_book(new_book)
+    return redirect('/books')
+
+@app.route('/books/delete/<index>')
+def delete_book_by_index(index):
+    remove_book_by_index(int(index))
     return redirect('/books')
