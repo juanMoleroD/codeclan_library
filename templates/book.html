@@ -31,7 +31,15 @@
                     
                     {% if book.checked_out %}
                     <td>{{ book.return_by}}</td>
-                    <td><a href="/books/check-in/{{ book_index }}">Check In</a></td>
+                    <!-- <td><a href="/books/check-in/{{ book_index }}">Check In</a></td>  works but not the requirements-->
+                    <td> 
+                        <form action="/books/check-in" method="POST">
+                            <label for="received">Received </label>
+                            <input type="checkbox" name="received" id="received">
+                            <input name="book-index" value="{{ book_index }}" hidden>
+                            <input type="submit" value="Check In">
+                        </form>
+                    </td>
                     {% else %}
                     <td><form action="/books/check-out" method="POST">
                         <input type="date" name="return-by" required>
