@@ -1,56 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <h1>All Books:</h1>
-    <table>
-        <thead>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Genre</th>
-            <th>Available</th>
-            <th>Show</th>
-            <th>Delete</th>
-        </thead>
-        <tbody>
-
-            {% for book in books %}
-            <tr>
-                <td>{{ book.title }}</td>
-                <td>{{ book.author }}</td>
-                <td>{{ book.genre }}</td>
-
-                {% if book.checked_out %}
-                <td class="available-cell">Checked out &#10060;</td>
-                {% else %}
-                <td class="available-cell">Available &#9989;</td>
-                {% endif %}
-
-                <td><a href="/books/{{ loop.index0 }}">Show</a></td> <!-- or books.index(book)  -->
-                <td><a href="/books/delete/{{ loop.index0 }}">Delete</a></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <br>
-    <a href="/books/new">Add new Book</a>
-    <br>
-    <br>
-    <form action="/books/delete" method="POST">
-        <section>
-            <label for="delete">Delete Book</label>
-            <input type="text" name="book-title" placeholder="Enter Title">
-            <input type="submit" value="DELETE">
-        </section>
-    </form>
-
-    
-    
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<main id="all-books-main-container">
+    <section>
+        <h1>All Books</h1>
+        <table>
+            <thead>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Available</th>
+                <th>Show</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+        
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.genre }}</td>
+        
+                    {% if book.checked_out %}
+                    <td class="available-cell">Checked out &#10060;</td>
+                    {% else %}
+                    <td class="available-cell">Available &#9989;</td>
+                    {% endif %}
+        
+                    <td><a href="/books/{{ loop.index0 }}">Show</a></td> <!-- or books.index(book)  -->
+                    <td><a href="/books/delete/{{ loop.index0 }}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+       <br>
+        <form action="/books/delete" method="POST">
+            <section>
+                <label for="delete">Delete Book by Title:</label>
+                <input type="text" name="book-title" placeholder="Enter Title">
+                <input type="submit" value="DELETE">
+            </section>
+        </form>
+        <br>
+        <a href="/books/new" id="add-book-link">Add new Book</a>
+    </section>
+</main>
+{% endblock %}

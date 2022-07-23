@@ -1,56 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} Book details</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-
-    <h1>All Books:</h1>
-    <table>
-        <thead>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Genre</th>
-            <th>Available</th>
-            {% if book.checked_out %}
-            <th>Return By</th>
-            <th>Check In</th>
-            {% else %}
-            <th>Return Date</th>
-            {% endif %}
-            
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ book.title }}</td>
-                <td>{{ book.author}}</td>
-                <td>{{ book.genre }}</td>
-
+{% extends 'base.html' %}
+{% block content %}
+<main id="book-main-container">
+    <section>
+        <h1>All Books:</h1>
+        <table>
+            <thead>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Available</th>
                 {% if book.checked_out %}
-                <td class="available-cell">Checked out &#10060;</td>
+                <th>Return By</th>
+                <th>Check In</th>
                 {% else %}
-                <td class="available-cell">Available &#9989;</td>
+                <th>Return Date</th>
                 {% endif %}
                 
-                {% if book.checked_out %}
-                <td>{{ book.return_by}}</td>
-                <td><a href="/books/check-in/{{ book_index }}">Check In</a></td>
-                {% else %}
-                <td><form action="/books/check-out" method="POST">
-                    <input type="date" name="return-by" required>
-                    <input name="book-index" value="{{ book_index }}" hidden>
-                    <input type="submit" value="Check Out">
-                </form></td>
-                {% endif %}
-            </tr>
-        </tbody>
-    </table>
-    <br>
-    <a href="/books">Back</a>
-
-</body>
-</html>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author}}</td>
+                    <td>{{ book.genre }}</td>
+    
+                    {% if book.checked_out %}
+                    <td class="available-cell">Checked out &#10060;</td>
+                    {% else %}
+                    <td class="available-cell">Available &#9989;</td>
+                    {% endif %}
+                    
+                    {% if book.checked_out %}
+                    <td>{{ book.return_by}}</td>
+                    <td><a href="/books/check-in/{{ book_index }}">Check In</a></td>
+                    {% else %}
+                    <td><form action="/books/check-out" method="POST">
+                        <input type="date" name="return-by" required>
+                        <input name="book-index" value="{{ book_index }}" hidden>
+                        <input type="submit" value="Check Out">
+                    </form></td>
+                    {% endif %}
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a href="/books" id="back-link">Back</a>
+    </section>
+</main>
+{% endblock %}

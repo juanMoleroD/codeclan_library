@@ -1,41 +1,144 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#main-header {
+    background-color: green;
+    width: 100%;
+}
+
+#header-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#logo {
+    color: white;
+    padding-left: 20px;
+    font-size: 36px;
+}
+
+#main-navbar {
+    display: flex;
+    list-style: none;
+    padding-right: 30px;
+}
+
+.nav-link {
+    margin: 10px;
+    font-size: 20px;
+}
+
+.nav-link > a:link {
+    color: white;
+}
+
+.nav-link > a:visited {
+    color: white;
+}
+
+#all-books-main-container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#book-main-container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
 h1 {
     color: green;
+    font-size: 36px;
+    
 }
 table {
-    border: 1px solid black;
+
     border-collapse: collapse;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 th {
     background-color: green;
     padding-top: 5px;
     padding-bottom: 5px;
+    color: white;
+    border-top: 0px;
 }
 
 th, tr , td {
     border: 1px solid black;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 4px 10px 4px 10px;
     justify-content: flex-start;
+}
+
+#add-new-book-main-content {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#add-new-book-main-content > section {
+    margin-top: 20px;
+    box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+}
+
+
+#add-new-book-main-content > section > h1 {
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 #new-books-form {
     width: 300px;
     margin: 0;
+    padding-bottom: 20px;
 }
 
 .form-items {
     display: flex;
     flex-direction: column;
-    padding: 16px;
-    
+    padding: 0px 40px 0px 40px 
+}
+
+::placeholder {
+    text-align: center;
+}
+
+#add-book-link {
+    font-size: 18px;
+}
+
+#back-link {
+    font-size: 20px;
 }
 
 #submit-button {
-    width: 30%;
+    width: 35%;
     margin: auto;
 }
 
 .available-cell {
     text-align: center;
+}
+
+body > footer {
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: darkgreen;
+    text-align: center;
+    color: white;
 }

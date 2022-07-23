@@ -1,25 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <h1>Add new book: </h1>
-    <form action="/books" method="POST" id="new-books-form">
-        <section class="form-items">
-            <label for="book-title" >Title</label>
-            <input type="text" name='book-title' id="book-title">
-            <label for="author">Author</label>
-            <input type="text" id="author" name="author">
-            <label for="genre">Genre</label>
-            <input type="text" id="genre" name="genre">
-            <br>
-            <input id='submit-button' type="submit" value="Add Book">
+{% extends 'base.html' %}
+{% block content %}
+    <main id="add-new-book-main-content">
+        <section>
+            <h1>New Book </h1>
+            <form action="/books" method="POST" id="new-books-form">
+                <section class="form-items">
+                    <label for="book-title" >Title</label>
+                    <input type="text" name='book-title' id="book-title">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author">
+                    <label for="genre">Genre</label>
+                    <input type="text" id="genre" name="genre">
+                    <br>
+                    <input id='submit-button' type="submit" value="Add Book">
+                </section>
+            </form>
         </section>
-    </form>
-</body>
-</html>
+    </main>
+{% endblock %}
