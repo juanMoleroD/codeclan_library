@@ -19,7 +19,6 @@ def new_book_form():
 
 @app.route('/books', methods=['POST'])
 def add_new_book():
-    #print(request.form)
     new_book = Book(request.form['book-title'], request.form['author'], request.form['genre'], False , datetime.now()) #new books are not yet checked out by default
     add_book(new_book)
     return redirect('/books')
@@ -35,6 +34,7 @@ def check_out():
     redirect_link = '/books/' + request.form['book-index']
     return redirect(redirect_link)
 
+#not in use 
 @app.route('/books/check-in/<index>')
 def check_in(index):
     checkin_book(int(index))
