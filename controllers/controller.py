@@ -45,3 +45,4 @@ def check_in(index):
 def delete_by_title():
     remove_book_by_title(request.form['book-title'])
     return redirect('/books')
+    

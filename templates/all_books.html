@@ -9,8 +9,8 @@
                 <th>Author</th>
                 <th>Genre</th>
                 <th>Available</th>
-                <th>Show</th>
-                <th>Delete</th>
+                <th>Details</th>
+                <th>Remove</th>
             </thead>
             <tbody>
         
@@ -27,7 +27,13 @@
                     {% endif %}
         
                     <td><a href="/books/{{ loop.index0 }}">Show</a></td> <!-- or books.index(book)  -->
-                    <td><a href="/books/delete/{{ loop.index0 }}">Delete</a></td>
+                    <!-- <td><a href="/books/delete/{{ loop.index0 }}">Delete</a></td>  works as a get request but not what was requested on the homework --> 
+                    <td>
+                        <form action="/books/delete" method="POST">
+                            <input type="text" name="book-title" value="{{ book.title }}" hidden>
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -38,7 +44,7 @@
             <section>
                 <label for="delete">Delete Book by Title:</label>
                 <input type="text" name="book-title" placeholder="Enter Title">
-                <input type="submit" value="DELETE">
+                <input type="submit" value="Delete">
             </section>
         </form>
         <br>
