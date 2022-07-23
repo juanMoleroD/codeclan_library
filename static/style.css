@@ -50,6 +50,7 @@ body {
 #all-books-main-container > section {
     margin-top: 50px;
     box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+    border-radius: 20px;
     padding: 0px 50px 50px 50px;
 }
 
@@ -63,16 +64,15 @@ body {
 #book-main-container > section {
     margin-top: 50px;
     box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+    border-radius: 20px;
     padding: 0px 50px 50px 50px;
 }
 
 h1 {
-    
     color: green;
     font-size: 36px;
-    
-    
 }
+
 table {
     border-collapse: collapse;
 }
@@ -101,6 +101,7 @@ th, tr , td {
 #add-new-book-main-content > section {
     margin-top: 20px;
     box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+    border-radius: 20px;
 }
 
 
@@ -114,13 +115,17 @@ th, tr , td {
 #new-books-form {
     width: 300px;
     margin: 0;
-    padding: 10px 0px 40px 0px;
+    padding: 10px 0px 30px 0px;
 }
 
 .form-items {
     display: flex;
     flex-direction: column;
-    padding: 0px 40px 0px 40px 
+    padding: 0px 40px 0px 40px;
+}
+
+.form-items > a{
+    text-align: center;
 }
 
 ::placeholder {
