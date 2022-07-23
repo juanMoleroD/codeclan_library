@@ -31,7 +31,7 @@ def delete_book_by_index(index):
 @app.route('/books/check-out', methods=['POST'])
 def check_out():
     checkout_book(int(request.form['book-index']), request.form['return-by'])
-    redirect_link = '/books/' + request.form['book-index']
+    redirect_link = '/books'
     return redirect(redirect_link)
 
 #not in use 
@@ -44,7 +44,7 @@ def check_in(index):
 @app.route('/books/check-in', methods=['POST'])
 def check_in_checkbox():
     checkin_book(int(request.form['book-index']))
-    redirect_link = '/books/' + request.form['book-index']
+    redirect_link = '/books'
     return redirect(redirect_link)
 
 @app.route('/books/delete', methods=['POST'])

@@ -29,4 +29,3 @@ def checkout_book(book_index, return_by_date):
 def checkin_book(book_index):
     if books[book_index].checked_out:
         books[book_index].checked_out = False
-

@@ -47,6 +47,12 @@ body {
     justify-content: space-around;
 }
 
+#all-books-main-container > section {
+    margin-top: 50px;
+    box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+    padding: 0px 50px 50px 50px;
+}
+
 #book-main-container {
     width: 100%;
     margin: auto;
@@ -54,15 +60,21 @@ body {
     justify-content: space-around;
 }
 
+#book-main-container > section {
+    margin-top: 50px;
+    box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+    padding: 0px 50px 50px 50px;
+}
+
 h1 {
+    
     color: green;
     font-size: 36px;
     
+    
 }
 table {
-
     border-collapse: collapse;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 th {
@@ -102,7 +114,7 @@ th, tr , td {
 #new-books-form {
     width: 300px;
     margin: 0;
-    padding-bottom: 20px;
+    padding: 10px 0px 40px 0px;
 }
 
 .form-items {
