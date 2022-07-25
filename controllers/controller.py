@@ -3,7 +3,7 @@ from datetime import datetime
 from flask import render_template, redirect, request
 from app import app
 from models.book import Book
-from models.book_list import books, add_book, checkout_book, remove_book_by_index, checkin_book, remove_book_by_title
+from models.book_list import *
 
 @app.route('/')
 def index():

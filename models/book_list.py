@@ -24,12 +24,3 @@ def remove_book_by_title(title):
             break
     if book_to_remove != None:
         books.remove(book_to_remove)
-
-def checkout_book(book_index, return_by_date):
-    if books[book_index].checked_out == False:
-        books[book_index].return_by = return_by_date
-        books[book_index].checked_out = True
-
-def checkin_book(book_index):
-    if books[book_index].checked_out:
-        books[book_index].checked_out = False
