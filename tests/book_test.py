@@ -22,3 +22,11 @@ class TestBook(unittest.TestCase):
     def test_book_has_return_by_date(self):
         self.assertEqual("22-07-2022", self.book1.return_by)
         
+    def test_book_can_be_checked_in(self):
+        self.book1.check_in()
+        self.assertEqual(False, self.book1.checked_out)
+    
+    def test_book_can_be_checked_out(self):
+        self.book1.check_in()
+        self.book1.check_out()
+        self.assertEqual(True, self.book1.checked_out)
