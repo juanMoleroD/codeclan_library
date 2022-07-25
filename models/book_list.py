@@ -22,7 +22,8 @@ def remove_book_by_title(title):
         if book.title == title:
             book_to_remove = book
             break
-    books.remove(book_to_remove)
+    if book_to_remove != None:
+        books.remove(book_to_remove)
 
 def checkout_book(book_index, return_by_date):
     if books[book_index].checked_out == False:
