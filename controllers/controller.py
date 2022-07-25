@@ -5,8 +5,12 @@ from app import app
 from models.book import Book
 from models.book_list import books, add_book, checkout_book, remove_book_by_index, checkin_book, remove_book_by_title
 
-@app.route('/books')
+@app.route('/')
 def index():
+    return redirect('/books')
+
+@app.route('/books')
+def home():
     return render_template('all_books.html', title='CodeClan Library', books=books)
 
 @app.route('/books/<index>')

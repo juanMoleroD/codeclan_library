@@ -21,9 +21,9 @@
                     <td>{{ book.genre }}</td>
         
                     {% if book.checked_out %}
-                    <td class="available-cell">Checked out &#10060;</td>
+                    <td class="available-cell">Checked out: &#10060;</td>
                     {% else %}
-                    <td class="available-cell">Available &#9989;</td>
+                    <td class="available-cell">Available: &#9989;</td>
                     {% endif %}
         
                     <td><a href="/books/{{ loop.index0 }}">Show</a></td> <!-- or books.index(book)  -->

@@ -17,9 +17,12 @@ def remove_book_by_index(index):
     books.pop(index)
 
 def remove_book_by_title(title):
+    book_to_remove = None
     for book in books:
         if book.title == title:
-            books.remove(book)
+            book_to_remove = book
+            break
+    books.remove(book_to_remove)
 
 def checkout_book(book_index, return_by_date):
     if books[book_index].checked_out == False:
